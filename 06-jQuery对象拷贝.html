@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function() {
+   //          var targetobj={};
+			// var obj={
+			// 	name:"json",
+			// 	age:10
+			// }
+			// // $.extend(target,obj)
+			// $.extend(targetobj,obj)
+			// console.log(targetobj);
+			
+			// var targetobj={
+			// 	id:0
+			// };
+			// var obj={
+			// 	name:"json",
+			// 	age:10
+			// }
+			// // $.extend(target,obj)
+			// $.extend(targetobj,obj)
+			// console.log(targetobj);//如果有相同的值就会覆盖前面的，没有就加到后面
+			
+			var targetobj={};
+			var obj={
+				name:"json",
+				age:10,
+				msg:{
+					msg:"sss"
+				}
+			}
+			// $.extend(target,obj)
+			// $.extend(targetobj,obj)
+			// console.log(targetobj);
+			// // 浅拷贝是把被拷贝的对象复杂数据类型中的地址拷贝给目标对象，修改目标对象会影响被拷贝对象。
+			// targetobj.msg.msg=20;
+			// console.log(obj)
+			// 深拷贝，前面加true， 完全克隆(拷贝的对象,而不是地址)，修改目标对象不会影响被拷贝对象。
+			$.extend(true,targetobj,obj)
+			targetobj.msg.msg=20;
+			console.log(obj)
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

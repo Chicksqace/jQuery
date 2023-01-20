@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        
+        .current {
+            background-color: purple;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+    </ul>
+    <ol>
+
+    </ol>
+    <script>
+        $(function() {
+            // 1. 单个事件注册
+            // $("div").click(function() {
+            //     $(this).css("background", "purple");
+            // });
+            // $("div").mouseenter(function() {
+            //     $(this).css("background", "skyblue");
+            // });
+
+            // 2. 事件处理on
+            // (1) on可以绑定1个或者多个事件处理程序
+      //      $("div").on({
+      //          mouseenter:function(){
+				  //  $(this).css("background","skyblue")
+			   // },
+      //          click:function(){
+      //              $(this).css("background", "purple");
+      //          }
+      //      })
+			// $("div").on("mouseenter mouseleave",function(){
+			// 	$(this).toggleClass("current")
+			// })
+            // (2)on可以实现事件委派
+            $("ul").on("click","li",function(){
+                alert(111)
+            })
+            // click是绑定在ul身上，但是触发的对象是ul里面的小li
+
+            // (3)on可以给未来动态创建的元素绑定事件
+            // $("ol li").click(function(){
+            //     alert(1111111111111)
+            // })  这样弹不出来
+            $("ol").on("click","li",function(){
+                alert(11)
+            })
+            var li=$("<li>后面的小li</li>")
+            $("ol").append(li);
+           
+        })
+    </script>
+</body>
+
+</html>
